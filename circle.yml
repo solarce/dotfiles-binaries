@@ -4,6 +4,7 @@ machine:
 
 dependencies:
   override:
+    - docker -v
     - docker info
     - docker pull ubuntu:precise
     - cat Dockerfiles/Dockerfile.precise
