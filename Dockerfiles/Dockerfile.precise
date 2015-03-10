@@ -1,10 +1,10 @@
 FROM ubuntu:precise
 
 MAINTAINER Brandon Burton <brandon@inatree.org>
-ENV BUILDIR /usr/local/bin
-RUN mkdir $BUILDDIR
-ADD ../scripts/* $BUILDDIR
-WORKDIR $BUILDIR
+ENV BUILD_DIR /usr/local/bin
+RUN mkdir $BUILD_DIR
+ADD ../scripts/* $BUILD_DIR
+WORKDIR $BUILD_DIR
 RUN chmod +x build.rb
 RUN bundle install
 RUN bundle exec build.rb
