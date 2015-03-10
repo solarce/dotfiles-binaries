@@ -6,4 +6,5 @@ dependencies:
   override:
     - docker info
     - docker pull ubuntu:precise
+    - ls *
     - docker build -f Dockerfiles/Dockerfile.precise .
