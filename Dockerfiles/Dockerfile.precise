@@ -1,0 +1,12 @@
+FROM ubuntu:precise
+
+MAINTAINER Brandon Burton <brandon@inatree.org>
+ENV BUILDIR /usr/local/bin
+RUN mkdir $BUILDDIR
+ADD ../scripts/* $BUILDDIR
+WORKDIR $BUILDIR
+RUN chmod +x build.rb
+RUN bundle install
+RUN bundle exec build.rb
+
+ENTRYPOINT ["/bin/true"]
