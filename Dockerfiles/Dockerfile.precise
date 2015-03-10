@@ -1,7 +1,7 @@
 FROM ubuntu:precise
 
 MAINTAINER Brandon Burton <brandon@inatree.org>
-ENV BUILD_DIR /usr/local/bin
+ENV BUILD_DIR /usr/local/build
 RUN mkdir $BUILD_DIR
 ADD ../scripts/* $BUILD_DIR
 WORKDIR $BUILD_DIR
