@@ -5,4 +5,4 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker pull ubuntu:12.04.5
+    - docker pull ubuntu:precise
