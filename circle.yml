@@ -7,5 +7,5 @@ dependencies:
     - docker -v
     - docker info
     - docker pull ubuntu:precise
-    - cat Dockerfiles/Dockerfile.precise
-    - docker build --pull=false - < Dockerfiles/Dockerfile.precise
+    - ln -s Dockerfiles/Dockerfile.precise Dockerfile
+    - docker build --pull=false .
