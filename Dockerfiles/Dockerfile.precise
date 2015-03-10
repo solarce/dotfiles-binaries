@@ -4,6 +4,7 @@ MAINTAINER Brandon Burton <brandon@inatree.org>
 ENV BUILD_DIR /usr/local/build
 RUN mkdir $BUILD_DIR
 ADD scripts/* $BUILD_DIR/
+RUN sudo gem install bundler
 WORKDIR $BUILD_DIR
 RUN chmod +x build.rb
 RUN bundle install
