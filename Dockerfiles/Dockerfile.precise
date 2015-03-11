@@ -1,4 +1,4 @@
-FROM solarce/dotfiles-ubuntu-precise
+FROM solarce/dotfiles-ubuntu-precise:latest
 
 MAINTAINER Brandon Burton <brandon@inatree.org>
 
