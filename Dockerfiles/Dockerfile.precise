@@ -8,6 +8,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN mkdir $BUILD_DIR
 ADD scripts/* $BUILD_DIR/
 ADD packages $BUILD_DIR/
+RUN ls $BUILD_DIR/
 RUN apt-get update -yqq
 RUN apt-get install ruby1.9.1-full -yqq
 RUN apt-get install curl -yqq
