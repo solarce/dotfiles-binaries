@@ -19,7 +19,7 @@ def make_package(package_name, package_info)
   end
 end
 
-packages_file = "../packages/packages.toml"
+packages_file = "packages/packages.toml"
 packages_config = TOML.load_file(packages_file)
 
 packages_config.each do | package_name,package_info |
