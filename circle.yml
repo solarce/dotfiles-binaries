@@ -6,6 +6,6 @@ dependencies:
   override:
     - docker -v
     - docker info
-    - docker pull ubuntu:precise
+    - docker pull solarce/dotfiles-ubuntu-precise
     - ln -s Dockerfiles/Dockerfile.precise Dockerfile
     - docker build --pull=false .
