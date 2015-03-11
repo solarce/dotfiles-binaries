@@ -14,6 +14,6 @@ RUN gem install bundler
 WORKDIR $BUILD_DIR
 RUN chmod +x build.rb
 RUN bundle install
-RUN bundle exec build.rb
+RUN bundle exec ./build.rb
 
 ENTRYPOINT ["/bin/true"]
