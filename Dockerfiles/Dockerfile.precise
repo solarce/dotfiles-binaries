@@ -11,5 +11,6 @@ ADD packages $BUILD_DIR/packages
 RUN ls $BUILD_DIR
 
 WORKDIR $BUILD_DIR
-RUN bundle install
+ENV PATH "$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+RUN bundle install --user-install
 RUN bundle exec ./build.rb
