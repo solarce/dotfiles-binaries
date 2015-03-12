@@ -5,7 +5,7 @@ require "mixlib/shellout"
 require 'toml'
 
 def make_package(package_name, package_info)
-  pkgsrc_root = "#{ENV['HOME']}/pkg"
+  pkgsrc_root = "#{ENV['HOME']}/pkgsrc"
   pkgsrc_pkgs = "#{pkgsrc_root}/packages/All"
   #source_url = package_info["source"]
   pkgsrc_name = package_info["pkgsrc_name"]
