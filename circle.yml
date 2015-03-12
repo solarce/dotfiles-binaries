@@ -1,6 +1,7 @@
 machine:
   services:
     - docker
+  timeout: 3600
 dependencies:
   cache_directories:
     - /home/ubuntu/pkg
@@ -12,6 +13,5 @@ dependencies:
     - ln -s Dockerfiles/Dockerfile.precise Dockerfile
 
 test:
-  timeout: 3600
   override:
     - docker build --pull=false .
