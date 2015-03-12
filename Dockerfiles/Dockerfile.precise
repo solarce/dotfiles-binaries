@@ -4,7 +4,7 @@ MAINTAINER Brandon Burton <brandon@inatree.org>
 
 ENV BUILD_DIR /home/ubuntu/build
 ENV BUNDLE_PATH /home/ubuntu/.gems
-ENV PATH "~/pkg/bin:~/pkg/sbin:$PATH"
+ENV PATH="~/pkg/bin:~/pkg/sbin:$PATH"
 ENV DEBIAN_FRONTEND noninteractive
 USER ubuntu
 RUN mkdir $BUILD_DIR
