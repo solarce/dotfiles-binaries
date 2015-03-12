@@ -4,6 +4,7 @@ MAINTAINER Brandon Burton <brandon@inatree.org>
 
 ENV BUILD_DIR /home/ubuntu/build
 ENV BUNDLE_PATH /home/ubuntu/.gems
+ENV PATH "~/pkg/bin:~/pkg/sbin:$PATH"
 ENV DEBIAN_FRONTEND noninteractive
 USER ubuntu
 RUN mkdir $BUILD_DIR
@@ -12,5 +13,6 @@ ADD packages $BUILD_DIR/packages
 RUN ls $BUILD_DIR
 
 WORKDIR $BUILD_DIR
+RUN echo $PATH
 RUN bundle install
 RUN bundle exec ./build.rb
