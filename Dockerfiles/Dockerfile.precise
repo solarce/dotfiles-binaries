@@ -10,9 +10,7 @@ USER ubuntu
 RUN mkdir $BUILD_DIR
 ADD scripts/* $BUILD_DIR/
 ADD packages $BUILD_DIR/packages
-RUN ls $BUILD_DIR
 
 WORKDIR $BUILD_DIR
-RUN echo $PATH
 RUN bundle install
 RUN bundle exec ./build.rb
