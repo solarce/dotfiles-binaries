@@ -11,6 +11,5 @@ ADD packages $BUILD_DIR/packages
 RUN ls $BUILD_DIR
 
 WORKDIR $BUILD_DIR
-RUN chmod +x build.rb
 RUN bundle install
 RUN bundle exec ./build.rb
