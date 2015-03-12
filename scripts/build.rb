@@ -8,7 +8,7 @@ def make_package(package_name, package_info)
   pkgsrc_root = "#{ENV['HOME']}/pkg" 
   #source_url = package_info["source"]
   version = package_info["version"]
-  source_file_name = source_url.split("/")[-1]
+  #source_file_name = source_url.split("/")[-1]
 
   p Dir["#{pkgsrc_root}/*"]
 end
