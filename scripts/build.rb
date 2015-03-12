@@ -4,9 +4,17 @@ require 'rubygems'
 require "mixlib/shellout"
 require 'toml'
 
+def bmake(pkgsrc_root, pkgsrc_name)
+  puts "building package for #{pkgsrc_name}"
+  make_pkg_cmd = Mixlib::ShellOut.new("bmake", "package", "clean", "clean-depends", :cwd => "#{pkgsrc_root}/#{pkgsrc_name}")
+  make_pkg_cmd.run_command
+
+  return [ make_pkg_cmd, true ]
+end
+
 def make_package(package_name, package_info)
   pkgsrc_root = "#{ENV['HOME']}/pkgsrc"
-  pkgsrc_pkgs = "#{pkgsrc_root}/packages/All"
+  #pkgsrc_pkgs = "#{pkgsrc_root}/packages/All"
   #source_url = package_info["source"]
   pkgsrc_name = package_info["pkgsrc_name"]
   #version = package_info["version"]
@@ -14,12 +22,16 @@ def make_package(package_name, package_info)
 
   #p Dir["#{pkgsrc_root}/*"]
   puts "building package for #{pkgsrc_name}"
-  make_pkg_cmd = Mixlib::ShellOut.new("bmake", "package", "clean", "clean-depends", :cwd => "#{pkgsrc_root}/#{pkgsrc_name}")
+  output = ""
+  make_pkg_cmd = Mixlib::ShellOut.new("bmake package", :cwd => "#{pkgsrc_root}/#{pkgsrc_name}", :live_stdout => output, :live_stderr => output)
   make_pkg_cmd.run_command
-  while make_pkg_cmd.exitstatus != 0
-    puts "building ..."
-    sleep 30
-  end
+  puts "output"
+  puts output
+  #while make_pkg_cmd.exitstatus != 0
+  #  puts "building ..."
+  #  puts live_output
+  #  sleep 30
+  #end
   p make_pkg_cmd
   p make_pkg_cmd.stdout
 end

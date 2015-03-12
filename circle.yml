@@ -14,3 +14,4 @@ dependencies:
 test:
   override:
     - docker build --pull=false .
+      timeout: 3600
