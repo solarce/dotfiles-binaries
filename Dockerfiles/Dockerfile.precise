@@ -2,9 +2,9 @@ FROM solarce/dotfiles-ubuntu-precise:latest
 
 MAINTAINER Brandon Burton <brandon@inatree.org>
 
-ENV BUILD_DIR /usr/local/build
+ENV BUILD_DIR /home/ubuntu/build
 ENV DEBIAN_FRONTEND noninteractive
-
+USER ubuntu
 RUN mkdir $BUILD_DIR
 ADD scripts/* $BUILD_DIR/
 ADD packages $BUILD_DIR/packages
@@ -14,5 +14,3 @@ WORKDIR $BUILD_DIR
 RUN chmod +x build.rb
 RUN bundle install
 RUN bundle exec ./build.rb
-
-ENTRYPOINT ["/bin/true"]
