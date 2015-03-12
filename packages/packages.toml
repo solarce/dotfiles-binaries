@@ -1,2 +1,3 @@
 [tmux]
+pkgsrc_name = "misc/tmux"
 version = "1.9a"
