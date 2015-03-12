@@ -6,6 +6,7 @@ require 'toml'
 
 def make_package(package_name, package_info)
   pkgsrc_root = "#{ENV['HOME']}/pkg"
+  pkgsrc_pkgs = "#{pkgsrc_root}/packages/All"
   #source_url = package_info["source"]
   pkgsrc_name = package_info["pkgsrc_name"]
   #version = package_info["version"]
@@ -13,7 +14,7 @@ def make_package(package_name, package_info)
 
   #p Dir["#{pkgsrc_root}/*"]
   puts "building package for #{pkgsrc_name}"
-  make_pkg_cmd = Mixlib::ShellOut.new("bmake", "package clean clean-depends", :env => "USE_DESTDIR=yes", :cwd => "#{pkgsrc_root}/#{pkgsrc_name}")
+  make_pkg_cmd = Mixlib::ShellOut.new("bmake", "package clean clean-depends", :cwd => "#{pkgsrc_root}/#{pkgsrc_name}")
   #env USE_DESTDIR=yes bmake package clean clean-depends
   make_pkg_cmd.run_command # etc.
   p make_pkg_cmd
