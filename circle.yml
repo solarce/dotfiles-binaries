@@ -1,8 +1,10 @@
 machine:
   services:
     - docker
-
 dependencies:
+  cache_directories:
+    - /home/ubuntu/pkg
+    - /home/ubuntu/pkgsrc
   override:
     - docker -v
     - docker info
