@@ -12,6 +12,6 @@ dependencies:
     - ln -s Dockerfiles/Dockerfile.precise Dockerfile
 
 test:
+  timeout: 3600
   override:
     - docker build --pull=false .
-      timeout: 3600
