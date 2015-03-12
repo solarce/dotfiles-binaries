@@ -3,6 +3,7 @@ FROM solarce/dotfiles-ubuntu-precise:latest
 MAINTAINER Brandon Burton <brandon@inatree.org>
 
 ENV BUILD_DIR /home/ubuntu/build
+ENV BUNDLE_PATH /home/ubuntu/.gems
 ENV DEBIAN_FRONTEND noninteractive
 USER ubuntu
 RUN mkdir $BUILD_DIR
@@ -11,6 +12,5 @@ ADD packages $BUILD_DIR/packages
 RUN ls $BUILD_DIR
 
 WORKDIR $BUILD_DIR
-ENV PATH "$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
-RUN bundle install --user-install
+RUN bundle install
 RUN bundle exec ./build.rb
