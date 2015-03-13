@@ -3,11 +3,12 @@ FROM solarce/dotfiles-ubuntu-precise:latest
 MAINTAINER Brandon Burton <brandon@inatree.org>
 
 ENV BUILD_DIR /home/ubuntu/build
+ENV CACHE_DIR /home/ubuntu/cache
 ENV BUNDLE_PATH /home/ubuntu/.gems
 ENV PATH="~/pkg/bin:~/pkg/sbin:$PATH"
 ENV DEBIAN_FRONTEND noninteractive
 USER ubuntu
-RUN mkdir $BUILD_DIR
+RUN mkdir $BUILD_DIR $CACHE_DIR
 ADD scripts/* $BUILD_DIR/
 ADD packages $BUILD_DIR/packages
 

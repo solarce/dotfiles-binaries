@@ -1,12 +1,9 @@
 machine:
   services:
     - docker
-  timeout: 3600
 dependencies:
-  cache_directories:
-    - /home/ubuntu/pkg
-    - /home/ubuntu/pkgsrc
   override:
+    - mkdir -p /cache/packages
     - docker -v
     - docker info
     - docker pull solarce/dotfiles-ubuntu-precise
@@ -14,4 +11,4 @@ dependencies:
 
 test:
   override:
-    - docker build --pull=false .
+    - docker run -v /home/ubuntu/dotfiles-binaries/:/home/ubuntu/code -v /cache/packages:/home/ubuntu/pkgsrc/packages solarce/dotfiles-ubuntu-precise:latest bash /home/ubuntu/code/scripts/prebuild.sh
