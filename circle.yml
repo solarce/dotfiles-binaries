@@ -3,7 +3,7 @@ machine:
     - docker
 dependencies:
   override:
-    - mkdir -p /cache/packages
+    - mkdir -p cache/packages
     - docker -v
     - docker info
     - docker pull solarce/dotfiles-ubuntu-precise
@@ -11,4 +11,4 @@ dependencies:
 
 test:
   override:
-    - docker run -v /home/ubuntu/dotfiles-binaries/:/home/ubuntu/code -v /cache/packages:/home/ubuntu/pkgsrc/packages solarce/dotfiles-ubuntu-precise:latest bash /home/ubuntu/code/scripts/prebuild.sh
+    - docker run -v /home/ubuntu/dotfiles-binaries/:/home/ubuntu/code -v /home/ubuntu/cache/packages:/home/ubuntu/pkgsrc/packages solarce/dotfiles-ubuntu-precise:latest bash /home/ubuntu/code/scripts/prebuild.sh
