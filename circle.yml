@@ -3,7 +3,7 @@ machine:
     - docker
 dependencies:
   override:
-    - sudo -u ubuntu mkdir -p cache
+    - sudo -u ubuntu mkdir -p /home/ubuntu/cache
     - chmod 777 /home/ubuntu/cache
     - docker -v
     - docker info
