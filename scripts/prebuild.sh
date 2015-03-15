@@ -9,7 +9,7 @@ mkdir build
 # the contents of pkgsrc to a Volume mount that CI will cache for us
 if [ ! -f /home/ubuntu/cache/pkgsrc/synced.txt ]
 then
-  rsync -aP /home/ubuntu/pkgsrc/ /home/ubuntu/cache/pkgsrc/
+  rsync -aP -q /home/ubuntu/pkgsrc/ /home/ubuntu/cache/pkgsrc/
   rm -r /home/ubuntu/pkgsrc
   ln -s /home/ubuntu/cache/pkgsrc /home/ubuntu/pkgsrc
 fi

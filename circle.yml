@@ -2,6 +2,8 @@ machine:
   services:
     - docker
 dependencies:
+  cache_directories:
+    - /home/ubuntu/cache
   override:
     - sudo -u ubuntu mkdir -p /home/ubuntu/cache
     - chmod 777 /home/ubuntu/cache
