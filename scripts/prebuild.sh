@@ -4,10 +4,13 @@ export PATH="~/pkg/bin:~/pkg/sbin:$PATH"
 cd /home/ubuntu
 mkdir build
 
+ls /home/ubuntu/cache
+echo "===="
 DATE=$(date)
 echo "Testing cache $DATE"
 echo $DATE > /home/ubuntu/cache/test_"$DATE".txt
-
+echo "===="
+ls /home/ubuntu/cache
 # The docker image we use for builds includes a bootstrapped
 # pkgsrc, if we're doing a fresh CI job, we want to move
 # the contents of pkgsrc to a Volume mount that CI will cache for us
