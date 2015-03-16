@@ -33,5 +33,5 @@ fi
 
 
 # Build the packages listed in packages.txt
-#ruby /home/ubuntu/code/scripts/build.rb
+ruby /home/ubuntu/code/scripts/build.rb
 
