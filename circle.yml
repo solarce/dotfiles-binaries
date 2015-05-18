@@ -5,6 +5,6 @@ dependencies:
   pre:
     - brew install cowsay
     - curl -kv ifconfig.me/all
-  test:
-    override:
-      - cowsay Hi!
+test:
+  override:
+    - cowsay Hi!
