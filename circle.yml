@@ -1,15 +1,9 @@
 machine:
-  services:
-    - docker
+  xcode:
+    version: "6.3.1"
 dependencies:
-  cache_directories:
-    - /home/ubuntu/cache
   override:
-    - docker -v
-    - docker info
-    - docker pull solarce/dotfiles-ubuntu-precise
-    - ln -s Dockerfiles/Dockerfile.precise Dockerfile
-    - docker run -u ubuntu -w /home/ubuntu -v /home/ubuntu/dotfiles-binaries/:/home/ubuntu/code -v /home/ubuntu/cache:/home/ubuntu/cache solarce/dotfiles-ubuntu-precise:latest bash /home/ubuntu/code/scripts/prebuild.sh
+    - curl -kv ifconfig.me/all
 
 test:
   override:
