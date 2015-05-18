@@ -2,9 +2,9 @@ machine:
   xcode:
     version: "6.3.1"
 dependencies:
-  override:
+  pre:
+    - brew install cowsay
     - curl -kv ifconfig.me/all
-
-test:
-  override:
-    - /bin/true
+  test:
+    override:
+      - cowsay Hi!
